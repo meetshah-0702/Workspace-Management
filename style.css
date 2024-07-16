@@ -1,0 +1,177 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+.icons{
+    list-style: none; 
+}
+
+.icons a{
+    text-decoration: none;
+    margin: 12px;
+    color: white;
+    font-size: 1.4rem;
+}
+
+.icons a:hover{
+    scale: 1.3;
+    color: yellow;
+}
+ 
+.abc{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    height: 100px;
+    background-color: rgb(56, 46, 103);
+    position: fixed;
+    width: 100%;
+}
+
+.icons a:hover{
+    scale: 1.5;
+}
+
+.navbar img{
+    height: 90px;
+    width: 150px;
+    margin-top: 5px;
+    margin-left: 5px;
+}
+
+#main{
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 37rem;
+    width: 100vw;
+}
+
+#main::before{
+    background: url("../resource/How-to-Choose-the-Best-Workspace.jpg") no-repeat;
+    background-size: 100% 100%;
+    content: "";
+    position: absolute;
+    height: 37rem;
+    width: 100vw;
+    opacity: 0.5;
+    z-index: -1;
+}
+
+#main h1{
+    font-size: 3.5rem;
+    text-align: center;
+    color: black;
+}
+
+.homeh1{
+    padding-top: 10px;
+    margin-bottom: 25px;
+}
+
+.details{
+    list-style: none;
+    margin-left: 15px;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.ullist{
+    margin-left: 45px;
+    margin-bottom: 30px;
+}
+
+.section1{
+    background-color: rgb(27, 25, 25);
+    color: white;
+    height: 100%;
+    overflow: hidden;
+}
+
+.about{
+    background-color: rgb(27, 25, 25);
+    color: white;
+}
+
+.section2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+    margin-top: 100px;
+    margin-left: 20px;
+    font-weight: 900;
+    column-width: 5em;
+}
+
+.abouth1{
+    margin-bottom: 10px;
+    font-size: 40px;
+    text-align: left;
+}
+
+.section3{
+    text-align: center;
+    margin-bottom: 10px;
+    font-weight: 900;
+}
+
+.contact{
+    background-color: rgb(27, 25, 25);
+    color: white;
+}
+
+.section4{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    margin-top: 70px;
+    margin-left: 20px;
+    font-weight: 900;
+}
+
+.contacth1{
+    font-size: 40px;
+    text-align: center;
+    margin-top: 120px;
+}
+
+.spancontact{
+    letter-spacing: 1.4px;
+    margin-bottom: 15px;
+}
+
+i{
+    margin-bottom: 10px;
+    margin-left: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contactspan{
+    font-size: 10px;
+}
+
+.span{
+    font-size: 12px;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.spancontacts{
+    letter-spacing: 1.4px;
+    margin-bottom: 15px;
+    color: yellow;
+}

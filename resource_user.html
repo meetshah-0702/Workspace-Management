@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="floorApp">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Floor Plan</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-route.min.js"></script>
+    <link href="../css/popup.css" rel="stylesheet">
+    <script defer src="../js/popup.js"></script>
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .floor {
+            display: none;
+            height: 300px;
+            width: 55%;
+            border: 2px solid red;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 80px;
+            position: relative;
+            margin-left: 20%;
+        }
+
+        .class {
+            width: 100px;
+            height: 70px;
+            border: 1px solid blue;
+            margin: 5px;
+            float: left;
+            border-radius: 5px;
+            overflow-y: hidden;
+        }
+
+        #class1001 {
+            position: absolute;
+            /* Position relative to the nearest positioned ancestor */
+            bottom: 12px;
+            /* Aligns to the bottom */
+            right: 12px;
+            width: 80px;
+        }
+
+        #class1002 {
+            position: absolute;
+            right: 100px;
+            bottom: 12px;
+            width: 80px;
+        }
+
+        #class1003 {
+            position: absolute;
+            bottom: 12px;
+            right: 240px;
+            width: 120px;
+        }
+
+        #class1005 {
+            position: absolute;
+            bottom: 12px;
+            right: 500px;
+            width: 120px;
+        }
+
+        #class1006 {
+            position: absolute;
+            bottom: 12px;
+            right: 680px;
+            width: 80px;
+        }
+
+        #class1007 {
+            position: absolute;
+            bottom: 12px;
+            right: 768px;
+            width: 80px;
+        }
+
+        #class1008 {
+            position: absolute;
+            left: 50px;
+            width: 80px;
+        }
+
+        #class1009 {
+            position: absolute;
+            left: 138px;
+            width: 80px;
+        }
+
+        #class1010 {
+            position: absolute;
+            left: 236px;
+            width: 120px;
+        }
+
+        #class1011 {
+            position: absolute;
+            left: 496px;
+        }
+
+        #class1012 {
+            position: absolute;
+            left: 604px;
+        }
+
+        #class1013 {
+            position: absolute;
+            left: 712px;
+        }
+
+        #classfloor {
+            position: absolute;
+            top: 105px;
+            left: 376px;
+            color: gray;
+            text-align: center;
+            font-size: 25pt;
+            border: 0 solid white;
+        }
+
+        #class2001 {
+            position: absolute;
+            /* Position relative to the nearest positioned ancestor */
+            bottom: 12px;
+            /* Aligns to the bottom */
+            right: 12px;
+            width: 80px;
+        }
+
+        #class2002 {
+            position: absolute;
+            right: 100px;
+            bottom: 12px;
+            width: 80px;
+        }
+
+        #class2003 {
+            position: absolute;
+            bottom: 12px;
+            right: 240px;
+            width: 120px;
+        }
+
+        #class2004 {
+            position: absolute;
+            bottom: 12px;
+            right: 368px;
+            width: 120px;
+        }
+
+        #class2005 {
+            position: absolute;
+            bottom: 12px;
+            right: 500px;
+            width: 120px;
+        }
+
+        #class2006 {
+            position: absolute;
+            bottom: 12px;
+            right: 680px;
+            width: 160px;
+        }
+
+        #class2008 {
+            position: absolute;
+            left: 130px;
+            width: 100px;
+        }
+
+        #class2009 {
+            position: absolute;
+            left: 238px;
+            width: 100px;
+        }
+
+        #class2010 {
+            position: absolute;
+            left: 356px;
+            width: 120px;
+        }
+
+        #class2011 {
+            position: absolute;
+            left: 496px;
+            width: 120px;
+        }
+
+        #class2012 {
+            position: absolute;
+            left: 624px;
+        }
+
+        #class2013 {
+            position: absolute;
+            left: 732px;
+        }
+
+        #class3001 {
+            position: absolute;
+            /* Position relative to the nearest positioned ancestor */
+            bottom: 12px;
+            /* Aligns to the bottom */
+            right: 12px;
+            width: 80px;
+        }
+
+        #class3002 {
+            position: absolute;
+            right: 100px;
+            bottom: 12px;
+            width: 80px;
+        }
+
+        #class3003 {
+            position: absolute;
+            bottom: 12px;
+            right: 240px;
+            width: 120px;
+        }
+
+        #class3004 {
+            position: absolute;
+            bottom: 12px;
+            right: 368px;
+            width: 120px;
+        }
+
+        #class3005 {
+            position: absolute;
+            bottom: 12px;
+            right: 500px;
+            width: 120px;
+        }
+
+        #class3006 {
+            position: absolute;
+            bottom: 12px;
+            right: 680px;
+            width: 160px;
+        }
+
+        #class3008 {
+            position: absolute;
+            left: 130px;
+            width: 100px;
+        }
+
+        #class3009 {
+            position: absolute;
+            left: 238px;
+            width: 100px;
+        }
+
+        #class3010 {
+            position: absolute;
+            left: 356px;
+            width: 120px;
+        }
+
+        #class3011 {
+            position: absolute;
+            left: 496px;
+            width: 120px;
+        }
+
+        #class3012 {
+            position: absolute;
+            left: 624px;
+        }
+
+        #class3013 {
+            position: absolute;
+            left: 732px;
+        }
+
+        .active {
+            display: block !important;
+        }
+
+        .headerAnnexure {
+            color: blue;
+            background-color: antiquewhite;
+            font-size: 18pt;
+            text-align: center;
+            margin-top: 10%;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: center;
+        }
+
+        .buttons button {
+            margin: 40px 10px;
+            background-color: rgb(0, 132, 255);
+            color: white;
+            border-radius: 5px;
+            text-align: center;
+            padding: 6px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+    </style>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body ng-controller="FloorController as floorCtrl" ng-init="floorCtrl.initialize()">
+    <nav class="navbar">
+        <img src="../resource/Workspace_Group-Logo.wine.png" alt="Workspace LOGO">
+        <ul class="abc">
+            <li class="icons"><a href="/html/index_user_home.html" target=_blank>Home</a></li>
+            <li class="icons"><a href="/html/aboutus_user.html" target=_blank>About Us</a></li>
+            <li class="icons"><a href="/html/resource_user.html" target=_blank>Resource</a></li>
+            <li class="icons"><a href="/html/contectus_user.html" target=_blank>Contact Us</a></li>
+            <li class="icons"><a href="/html/signup.html" target=_blank>Login</a></li>
+        </ul>
+    </nav>
+    <div class="headerAnnexure">
+        Basic Work Space Manager.
+    </div>
+
+    
+    <!-- Floors -->
+    <div id="groundFloor" class="floor" ng-class="{'active': floorCtrl.currentFloor === 0}">
+        <div class="class clickable-class" id="class1001" ng-class="{'occupied': floorCtrl.isOccupied('1001')}"
+        data-modal-target="#modal" data-modal-title="1001" data-class-id="1001">1001</div>
+        <div class="class clickable-class" id="class1002" ng-class="{'occupied': floorCtrl.isOccupied('1002')}"
+        data-modal-target="#modal" data-modal-title="1002" data-class-id="1002">1002</div>
+        <div class="class clickable-class" id="class1003" ng-class="{'occupied': floorCtrl.isOccupied('1003')}"
+        data-modal-target="#modal" data-modal-title="1003" data-class-id="1003">1003/1004</div>
+        <div class="class clickable-class" id="class1005" ng-class="{'occupied': floorCtrl.isOccupied('1005')}"
+        data-modal-target="#modal" data-modal-title="1005" data-class-id="1005">1005</div>
+        <div class="class clickable-class" id="class1006" ng-class="{'occupied': floorCtrl.isOccupied('1006')}"
+        data-modal-target="#modal" data-modal-title="1006" data-class-id="1006">1006</div>
+        <div class="class clickable-class" id="class1007" ng-class="{'occupied': floorCtrl.isOccupied('1007')}"
+        data-modal-target="#modal" data-modal-title="1007" data-class-id="1007">1007</div>
+        <div class="class clickable-class" id="class1008" ng-class="{'occupied': floorCtrl.isOccupied('1008')}"
+        data-modal-target="#modal" data-modal-title="1008" data-class-id="1008">1008</div>
+        <div class="class clickable-class" id="class1009" ng-class="{'occupied': floorCtrl.isOccupied('1009')}"
+        data-modal-target="#modal" data-modal-title="1009" data-class-id="1009">1009</div>
+        <div class="class clickable-class" id="class1010" ng-class="{'occupied': floorCtrl.isOccupied('1010')}"
+        data-modal-target="#modal" data-modal-title="1010" data-class-id="1010">1010</div>
+        <div class="class clickable-class" id="class1011" ng-class="{'occupied': floorCtrl.isOccupied('1011')}"
+        data-modal-target="#modal" data-modal-title="1011" data-class-id="1011">1011</div>
+        <div class="class clickable-class" id="class1012" ng-class="{'occupied': floorCtrl.isOccupied('1012')}"
+        data-modal-target="#modal" data-modal-title="1012" data-class-id="1012">1012</div>
+        <div class="class clickable-class" id="class1013" ng-class="{'occupied': floorCtrl.isOccupied('1013')}"
+        data-modal-target="#modal" data-modal-title="1013" data-class-id="1013">1013</div>
+        <div class="class" id="classfloor">Ground Floor</div>
+        
+    </div>
+    <div id="firstFloor" class="floor" ng-class="{'active': floorCtrl.currentFloor === 1}">
+        <div class="class clickable-class" id="class2001" ng-class="{'occupied': floorCtrl.isOccupied('2001')}"
+        data-modal-target="#modal" data-modal-title="2001" data-class-id="2001">2001</div>
+        <div class="class clickable-class" id="class2002" ng-class="{'occupied': floorCtrl.isOccupied('2002')}"
+        data-modal-target="#modal" data-modal-title="2002" data-class-id="2002">2002</div>
+        <div class="class clickable-class" id="class2003" ng-class="{'occupied': floorCtrl.isOccupied('2003')}"
+        data-modal-target="#modal" data-modal-title="2003" data-class-id="2003">2003</div>
+        <div class="class clickable-class" id="class2004" ng-class="{'occupied': floorCtrl.isOccupied('2004')}"
+        data-modal-target="#modal" data-modal-title="Faculty Office" data-class-id="fo1">Office</div>
+        <div class="class clickable-class" id="class2005" ng-class="{'occupied': floorCtrl.isOccupied('2005')}"
+        data-modal-target="#modal" data-modal-title="2005" data-class-id="2005">2005</div>
+        <div class="class clickable-class" id="class2006" ng-class="{'occupied': floorCtrl.isOccupied('2006')}"
+        data-modal-target="#modal" data-modal-title="2006" data-class-id="2006">2006</div>
+        <div class="class clickable-class" id="class2008" ng-class="{'occupied': floorCtrl.isOccupied('2008')}"
+        data-modal-target="#modal" data-modal-title="2008" data-class-id="2008">2008</div>
+        <div class="class clickable-class" id="class2009" ng-class="{'occupied': floorCtrl.isOccupied('2009')}"
+        data-modal-target="#modal" data-modal-title="2009" data-class-id="2009">2009</div>
+        <div class="class clickable-class" id="class2010" ng-class="{'occupied': floorCtrl.isOccupied('2010')}"
+        data-modal-target="#modal" data-modal-title="Faculty Office" data-class-id="fo2"> Office</div>
+        <div class="class clickable-class" id="class2011" ng-class="{'occupied': floorCtrl.isOccupied('2011')}"
+        data-modal-target="#modal" data-modal-title="2011" data-class-id="2011">2011</div>
+        <div class="class clickable-class" id="class2012" ng-class="{'occupied': floorCtrl.isOccupied('2012')}"
+        data-modal-target="#modal" data-modal-title="2012" data-class-id="2012">2012</div>
+        <div class="class clickable-class" id="class2013" ng-class="{'occupied': floorCtrl.isOccupied('2013')}"
+        data-modal-target="#modal" data-modal-title="2013" data-class-id="2013">2013</div>
+        <div class="class" id="classfloor">First Floor</div>
+    </div>
+    <div id="secondFloor" class="floor" ng-class="{'active': floorCtrl.currentFloor === 2}">
+        <div class="class clickable-class" id="class3001" ng-class="{'occupied': floorCtrl.isOccupied('3001')}"
+        data-modal-target="#modal" data-modal-title="3001" data-class-id="3001">3001</div>
+        <div class="class clickable-class" id="class3002" ng-class="{'occupied': floorCtrl.isOccupied('3002')}"
+        data-modal-target="#modal" data-modal-title="3002" data-class-id="3002">3002</div>
+        <div class="class clickable-class" id="class3003" ng-class="{'occupied': floorCtrl.isOccupied('3003')}"
+        data-modal-target="#modal" data-modal-title="3003" data-class-id="3003">3003</div>
+        <div class="class clickable-class" id="class3004" ng-class="{'occupied': floorCtrl.isOccupied('3004')}"
+        data-modal-target="#modal" data-modal-title="Faculty Office" data-class-id="fo3"> Office</div>
+        <div class="class clickable-class" id="class3005" ng-class="{'occupied': floorCtrl.isOccupied('3005')}"
+        data-modal-target="#modal" data-modal-title="3005" data-class-id="3005">3005</div>
+        <div class="class clickable-class" id="class3006" ng-class="{'occupied': floorCtrl.isOccupied('3006')}"
+        data-modal-target="#modal" data-modal-title="3006" data-class-id="3006">3006</div>
+        <div class="class clickable-class" id="class3008" ng-class="{'occupied': floorCtrl.isOccupied('3008')}"
+        data-modal-target="#modal" data-modal-title="3008" data-class-id="3008">3008</div>
+        <div class="class clickable-class" id="class3009" ng-class="{'occupied': floorCtrl.isOccupied('3009')}"
+        data-modal-target="#modal" data-modal-title="3009" data-class-id="3009">3009</div>
+        <div class="class clickable-class" id="class3010" ng-class="{'occupied': floorCtrl.isOccupied('3010')}"
+        data-modal-target="#modal" data-modal-title="Faculty Office" data-class-id="3010"> Office</div>
+        <div class="class clickable-class" id="class3011" ng-class="{'occupied': floorCtrl.isOccupied('3011')}"
+        data-modal-target="#modal" data-modal-title="3010" data-class-id="3011">3011</div>
+        <div class="class clickable-class" id="class3012" ng-class="{'occupied': floorCtrl.isOccupied('3012')}"
+        data-modal-target="#modal" data-modal-title="3011" data-class-id="3012">3012</div>
+        <div class="class clickable-class" id="class3013" ng-class="{'occupied': floorCtrl.isOccupied('3013')}"
+        data-modal-target="#modal" data-modal-title="3013" data-class-id="3013">3013</div>
+        <div class="class" id="classfloor">Second Floor</div>
+    </div>
+    
+    <div class="buttons">
+        <button ng-click="floorCtrl.showFloor(0)">Ground Floor</button>
+        <button ng-click="floorCtrl.showFloor(1)">First Floor</button>
+        <button ng-click="floorCtrl.showFloor(2)">Second Floor</button>
+    </div>
+
+    <div class="modal" id="modal">
+        <div class="modal-header">
+            <div class="modal-title">Example Modal</div>
+            <button data-close-button class="close-button">&times;</button>
+        </div>
+        <div class="modal-body">
+            
+            <div id="assetsContainer" class="assetContainerClass"></div> <!-- Container for displaying assets -->
+
+            
+        </div>
+    </div>
+    <div id="overlay"></div>
+    <script>
+        angular.module('floorApp', [])
+            .controller('FloorController', function ($scope, $http) {
+                this.currentFloor = 0; // Default to ground floor
+                $scope.currentSubjects = [];
+
+                this.showFloor = function (floorNumber) {
+                    this.currentFloor = floorNumber;
+                };
+
+            })
+            .filter('range', function () {
+                return function (input, total) {
+                    total = parseInt(total);
+                    for (var i = 0; i < total; i++) {
+                        input.push(i);
+                    }
+                    return input;
+                };
+            });
+
+    </script>
+</body>
+
+</html>

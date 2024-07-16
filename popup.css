@@ -1,0 +1,121 @@
+
+  .modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: 200ms ease-in-out;
+    border: 1px solid black;
+    border-radius: 10px;
+    z-index: 10;
+    background-color: white;
+    width: 1000px;
+    height: 500px;
+    max-width: 80%;
+  }
+  
+  .modal.active {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  
+  .modal-header {
+    padding: 10px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid black;
+  }
+  
+  .modal-header .title {
+    font-size: 1.25rem;
+    font-weight: bold;
+  }
+  
+  .modal-header .close-button {
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background: none;
+    font-size: 1.25rem;
+    font-weight: bold;
+  }
+  
+  .modal-body {
+    padding: 10px 15px;
+    height: 100%;
+    display: flex;
+    background-color: beige;
+    border-radius: 10px;
+    height: 433px;
+  }
+  .assetDivision {
+    width: fit-content;               /* Set the width of the box */
+    height: 50px;              /* Set the height of the box */
+    background-color: white; /* Set a background color */
+    border: 1px solid #ccc;    /* Optional: adds a border around the box */
+    box-shadow: 3px 3px 6px rgba(0,0,0,0.3); /* Adds shadow to the box */
+    margin: 10px;              /* Adds space around each box */
+    padding: 5px;
+    font-size: 12pt;
+    border-radius: 5px; 
+}
+
+ .modal-body #addAssetButton,#deleteAssetButton,#updateAssetButton,#clearAllButton{
+  position: absolute;
+  right: 44px;
+  width: 120px;
+  font-size: 10pt;
+  padding: 4px;
+    background: #2B2D2F;
+    text-align: center;
+    margin: 0 auto;
+    cursor: pointer;
+    border-radius: 4px;
+    color: aquamarine;
+ }
+ .modal-body #addAssetButton{
+  top: 80px;
+ }
+ .modal-body #deleteAssetButton{
+  top: 130px;
+ }
+ .modal-body #updateAssetButton{
+  top: 180px;
+ }
+ .modal-body #clearAllButton{
+  top: 230px;
+ }
+
+ .form1{
+  position: absolute;
+  left: 70px;
+  bottom: 20px;
+ }
+
+  .modal-body .assetContainerClass{
+    border: 1px solid  grey;
+    background-color: white;
+    border-radius: 15px;
+    width: 80%;
+    height: 90%;
+    display: flex;
+  }
+  
+  #overlay {
+    position: fixed;
+    opacity: 0;
+    transition: 200ms ease-in-out;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, .5);
+    pointer-events: none;
+  }
+  
+  #overlay.active {
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  
